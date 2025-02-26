@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="card">
+    <div class="card-title">Lorem ipsum dolor sit amet</div>
+    <div class="card-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt neque
+      eos ullam temporibus, aliquid nihil ab voluptate.
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">teste sit amet</div>
+    <div class="card-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt neque
+      eos ullam temporibus, aliquid nihil ab voluptate.
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Lorem ipsum dolor sit amet</div>
+    <div class="card-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt neque
+      eos ullam temporibus, aliquid nihil ab voluptate.
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">teste sit amet</div>
+    <div class="card-description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt neque
+      eos ullam temporibus, aliquid nihil ab voluptate.
+    </div>
+  </div>
+</div>
+<style>
+  .container {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card {
+    position: relative;
+  }
+
+  .card-title {
+    border: 1px solid;
+    padding: 20px 10px;
+    cursor: pointer;
+  }
+
+  .card-description {
+    position: absolute;
+    padding: 20px;
+    top: 0px;
+    display: none;
+  }
+
+  .card-description-active {
+    position: unset;
+    padding: 20px;
+    display: block;
+  }
+</style>
+
+<script>
+  const cardDescription = document.querySelectorAll(".card-description");
+  const cardTitle = document.querySelectorAll(".card-title");
+  cardTitle.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      cardDescription[index].classList.toggle("card-description-active");
+      cardDescription.forEach((description, i) => {
+        if (i !== index) {
+          description.classList.remove("card-description-active");
+        }
+      });
+    });
+  });
+</script>
