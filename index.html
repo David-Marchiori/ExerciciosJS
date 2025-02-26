@@ -1,0 +1,30 @@
+<div id="canva-text">
+  <textarea name="text" id="text" maxlength="10"></textarea>
+  <p id="count">0</p>
+</div>
+
+<style>
+  .canva-text {
+    width: 600px;
+    height: 400px;
+  }
+  .full {
+    border: 1px solid red;
+    color: red;
+  }
+</style>
+
+<script>
+  let textTotal = 0;
+  const text = document.getElementById("text");
+  const count = document.getElementById("count");
+  text.addEventListener("input", teste);
+  function teste() {
+    textTotal = text.value.length;
+    count.textContent = textTotal;
+
+    if (textTotal === 10) {
+      text.classList.toggle("full");
+    }
+  }
+</script>
