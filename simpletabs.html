@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="container-main">
+      <h1>Abas</h1>
+      <div class="container-view">
+        <div class="container-abas">
+          <nav>
+            <ul>
+              <li><a href="#" class="btn" id="one">First</a></li>
+              <li><a href="#" class="btn" id="two">First</a></li>
+              <li><a href="#" class="btn" id="three">First</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="container-canva">
+          <div class="canva" id="canva-one">um</div>
+          <div class="canva" id="canva-two">dois</div>
+          <div class="canva" id="canva-three">teste</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<style>
+  .container-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-abas ul {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    border: 1px solid;
+    list-style: none;
+    padding: 4px 20px;
+  }
+
+  .container-canva {
+    position: relative;
+    border: 1px solid;
+  }
+
+  .canva {
+    display: none;
+  }
+
+  #canva-one {
+    display: block;
+  }
+</style>
+<script>
+  //   document.getElementById("one").addEventListener("click", () => {
+  //     const btn = document.getElementById("canva-one");
+  //     btn.classList.toggle("canva-active");
+  //   });
+
+  document.addEventListener("click", (event) => {
+    if (event.target.id === "one") {
+      document.getElementById("canva-one").style.display = "block";
+      document.getElementById("canva-two").style.display = "none";
+      document.getElementById("canva-three").style.display = "none";
+    }
+    if (event.target.id === "two") {
+      document.getElementById("canva-one").style.display = "none";
+      document.getElementById("canva-two").style.display = "block";
+      document.getElementById("canva-three").style.display = "none";
+    }
+    if (event.target.id === "three") {
+      document.getElementById("canva-one").style.display = "none";
+      document.getElementById("canva-two").style.display = "none";
+      document.getElementById("canva-three").style.display = "block";
+    }
+  });
+</script>
